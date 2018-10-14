@@ -4,10 +4,11 @@ sudo: false
 env:
   global:
     - PATH="~/bin:$PATH"
+    - TERRAFORM_VERSION="0.11.8"
 
 # Install terraform
 before_install:
-  - curl -sLo /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip
+  - curl -sLo "/tmp/terraform.zip https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip"
   - unzip /tmp/terraform.zip -d /tmp
   - mkdir -p ~/bin
   - mv /tmp/terraform ~/bin
