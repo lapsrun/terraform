@@ -7,6 +7,7 @@ env:
     - TERRAFORM_VERSION="0.11.8"
 
 before_install:
+  - env
   - curl -sLo "/tmp/terraform.zip" "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip"
   - unzip /tmp/terraform.zip -d /tmp
   - mkdir -p ~/bin
