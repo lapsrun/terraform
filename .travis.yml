@@ -13,4 +13,6 @@ before_install:
   - mkdir -p ~/bin
   - mv /tmp/terraform ~/bin
 
-script: terraform validate
+script:
+  - terraform init -backend=false
+  - terraform validate
