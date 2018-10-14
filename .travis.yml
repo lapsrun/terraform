@@ -12,6 +12,8 @@ before_install:
   - unzip /tmp/terraform.zip -d /tmp
   - mkdir -p ~/bin
   - mv /tmp/terraform ~/bin
+  - which terraform
+  - terraform --version
 
 script:
   - terraform init -backend=false
