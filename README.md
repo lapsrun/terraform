@@ -17,6 +17,12 @@ env | grep -i aws
 git clone git@github.com:lapsrun/terraform.git
 cd terraform
 
+cat > ~/.terraformrc <<EOF
+credentials "app.terraform.io" {
+  token = "REPLACE_ME"
+}
+EOF
+
 AWS_PROFILE=personal terraform init
 
 AWS_PROFILE=personal terraform plan -out=plan
