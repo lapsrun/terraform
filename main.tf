@@ -1,11 +1,12 @@
 terraform {
-  required_version = "= 0.11.8"
+  required_version = "= 0.11.12"
 
-  backend "s3" {
-    region  = "us-east-1"
-    bucket  = "tph-etc"
-    key     = "ops/laps.run/terraform"
-    encrypt = true
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "lapsrun"
+    workspaces {
+      name = "main"
+    }
   }
 }
 
